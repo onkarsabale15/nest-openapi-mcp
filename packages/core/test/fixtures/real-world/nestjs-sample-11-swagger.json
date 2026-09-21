@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/cats": {
+      "post": {
+        "operationId": "CatsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "403": {
+            "description": "Forbidden."
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Create cat",
+        "tags": [
+          "cats"
+        ]
+      }
+    },
+    "/cats/{id}": {
+      "get": {
+        "operationId": "CatsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The found record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cat"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "cats"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Cats example",
+    "description": "The cats API description",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "cats",
+      "description": ""
+    }
+  ],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CreateCatDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "Cat": {
+        "type": "object",
+        "properties": {
+          "age": {
+            "type": "number",
+            "example": 1,
+            "description": "The age of the Cat"
+          },
+          "breed": {
+            "type": "string",
+            "example": "Maine Coon",
+            "description": "The breed of the Cat"
+          }
+        },
+        "required": [
+          "age",
+          "breed"
+        ]
+      }
+    }
+  }
+}
