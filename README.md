@@ -27,6 +27,17 @@ default policy so nothing is LLM-callable until you explicitly opt it in.
 | `packages/server` | NestJS dynamic module (`McpModule.forRoot`), decorators, discovery, in-process dispatch, transports. |
 | `packages/cli`    | Standalone CLI: turns any OpenAPI 3.0/3.1 document into a proxying MCP server.                       |
 
+## Usage
+
+There are four distinct ways this is designed to be used — only one of them works today. See
+**[`docs/usage/`](./docs/usage/README.md)** for the full breakdown with a status table and a guide
+per mode:
+
+- **[Use `@mcp-gen/core` directly](./docs/usage/core-library.md)** — available now, real code examples.
+- **[In-process NestJS module](./docs/usage/in-process-module.md)** — planned (`McpModule.forRoot()`).
+- **[Manual, non-HTTP tools](./docs/usage/manual-tools.md)** — planned (`@McpTool`/`@McpArg`).
+- **[Standalone CLI / proxy](./docs/usage/cli-proxy.md)** — planned (`npx @mcp-gen/cli serve`).
+
 ## Development
 
 ```bash
