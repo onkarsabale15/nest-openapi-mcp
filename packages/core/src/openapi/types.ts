@@ -1,4 +1,4 @@
-import type { JsonSchemaProperty } from '@mcp-gen/common';
+import type { JsonSchemaProperty } from '@onkarsabale15/mcp-gen-common';
 
 /**
  * A deliberately minimal slice of the OpenAPI 3.0/3.1 Operation Object — only the fields the

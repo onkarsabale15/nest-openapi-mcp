@@ -1,4 +1,4 @@
-# @mcp-gen/core
+# @onkarsabale15/mcp-gen-core
 
 Framework-agnostic OpenAPI → MCP tool schema engine: `$ref` resolution, parameter flattening, tool
 naming/de-duplication, a tool registry, response truncation, and a fallback that fills in
@@ -7,21 +7,21 @@ class-validator-only DTO schemas that `@nestjs/swagger` would otherwise leave em
 **Status: available now.** Part of [nest-openapi-mcp](https://github.com/onkarsabale15/nest-openapi-mcp),
 a project to turn a NestJS API into an [MCP](https://modelcontextprotocol.io) server. This package
 has zero dependency on NestJS, Express, or Fastify — it only knows how to turn an OpenAPI document
-into MCP tool definitions. The packages that actually run a server (`@mcp-gen/server`,
-`@mcp-gen/cli`) are still placeholders; see the
+into MCP tool definitions. The packages that actually run a server (`@onkarsabale15/mcp-gen-server`,
+`@onkarsabale15/mcp-gen-cli`) are still placeholders; see the
 [full usage guide](https://github.com/onkarsabale15/nest-openapi-mcp/blob/master/docs/usage/README.md)
 for what's real today versus planned.
 
 ## Install
 
 ```bash
-npm install @mcp-gen/core @mcp-gen/common
+npm install @onkarsabale15/mcp-gen-core @onkarsabale15/mcp-gen-common
 ```
 
 ## Quick example
 
 ```typescript
-import { resolveRefs, operationToTool, ToolRegistry } from '@mcp-gen/core';
+import { resolveRefs, operationToTool, ToolRegistry } from '@onkarsabale15/mcp-gen-core';
 
 const document = await resolveRefs(myOpenApiDocument);
 const usedNames = new Set<string>();

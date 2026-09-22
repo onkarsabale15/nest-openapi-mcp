@@ -1,5 +1,5 @@
 import { getMetadataStorage } from 'class-validator';
-import type { JsonSchemaObject, JsonSchemaProperty } from '@mcp-gen/common';
+import type { JsonSchemaObject, JsonSchemaProperty } from '@onkarsabale15/mcp-gen-common';
 import type { OpenApiDocument } from './types.js';
 
 /** A DTO class constructor, as `@Body()`/DTO parameter types actually are. */

@@ -2,7 +2,7 @@
 
 Thanks for taking a look. This project is early (see `docs/mcp-generator-hld-lld.md` for the full
 architecture and `docs/real-world-validation-report.md` for how the design has been validated so far),
-so there's a lot of room to help — from Phase 2 (`@mcp-gen/server`) onward, most of the actual product
+so there's a lot of room to help — from Phase 2 (`@onkarsabale15/mcp-gen-server`) onward, most of the actual product
 doesn't exist yet.
 
 ## Setup
@@ -26,7 +26,7 @@ pnpm test        # Vitest per package
 ```
 
 Run all four before opening a PR — CI runs the same commands and won't pass otherwise. If you're
-touching `packages/core`, also make sure `pnpm --filter @mcp-gen/core test` still passes the real-world
+touching `packages/core`, also make sure `pnpm --filter @onkarsabale15/mcp-gen-core test` still passes the real-world
 regression suite (`test/real-world.spec.ts`) — it runs the full pipeline against three independently
 sourced OpenAPI documents (not fixtures written to match our own assumptions) and is the thing most
 likely to catch a change that works on synthetic test data but breaks on a real spec.

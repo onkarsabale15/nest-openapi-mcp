@@ -1,4 +1,4 @@
-import type { McpToolDefinition } from '@mcp-gen/common';
+import type { McpToolDefinition } from '@onkarsabale15/mcp-gen-common';
 import { buildToolName } from './tool-name.js';
 import { planParameterMapping, type ParamStrategy } from './parameter-flattener.js';
 import type { OpenApiOperation } from './types.js';

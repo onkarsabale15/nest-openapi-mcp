@@ -54,7 +54,7 @@ while, since it avoids a public 0-day window.
 
 ## Scope
 
-In scope: the `@mcp-gen/common`, `@mcp-gen/core`, `@mcp-gen/server`, and `@mcp-gen/cli` packages in this
+In scope: the `@onkarsabale15/mcp-gen-common`, `@onkarsabale15/mcp-gen-core`, `@onkarsabale15/mcp-gen-server`, and `@onkarsabale15/mcp-gen-cli` packages in this
 repository. Vulnerabilities in upstream dependencies (`@nestjs/*`, `@modelcontextprotocol/sdk`,
 `class-validator`, etc.) should be reported to those projects directly, though we'd appreciate a heads
 up if one affects how this library uses them.

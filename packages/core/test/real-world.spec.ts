@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { IsInt, IsString } from 'class-validator';
-import { SchemaResolutionError } from '@mcp-gen/common';
+import { SchemaResolutionError } from '@onkarsabale15/mcp-gen-common';
 import { resolveRefs } from '../src/openapi/ref-resolver.js';
 import { operationToTool } from '../src/openapi/operation-to-tool.js';
 import { enrichEmptySchemas } from '../src/openapi/class-validator-fallback.js';

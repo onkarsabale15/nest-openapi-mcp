@@ -1,6 +1,6 @@
-# Mode A: the in-process NestJS module (`@mcp-gen/server`)
+# Mode A: the in-process NestJS module (`@onkarsabale15/mcp-gen-server`)
 
-> **Status: planned, not implemented yet.** `@mcp-gen/server` is currently a placeholder package.
+> **Status: planned, not implemented yet.** `@onkarsabale15/mcp-gen-server` is currently a placeholder package.
 > This document describes the designed API from `docs/mcp-generator-hld-lld.md` (§2.1, §3.4,
 > §3.6–§3.9, §3.12) — it's the target for Phase 2 and Phase 3 of the roadmap, not something you
 > can install today. Written now so the intended developer experience is concrete and reviewable
@@ -24,14 +24,14 @@ request regardless of how that request arrived. If you need to point at a *remot
 ## Planned installation
 
 ```bash
-npm install @mcp-gen/server @nestjs/swagger
+npm install @onkarsabale15/mcp-gen-server @nestjs/swagger
 ```
 
 ## Planned basic setup
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { McpModule } from '@mcp-gen/server';
+import { McpModule } from '@onkarsabale15/mcp-gen-server';
 
 @Module({
   imports: [
@@ -59,7 +59,7 @@ caller, by design.
 ## Planned: explicit per-endpoint control
 
 ```typescript
-import { McpExpose, McpExclude } from '@mcp-gen/server';
+import { McpExpose, McpExclude } from '@onkarsabale15/mcp-gen-server';
 
 @Controller('orders')
 export class OrdersController {
@@ -81,7 +81,7 @@ export class OrdersController {
 
 If your DTOs are validated with `class-validator` alone (no `@ApiProperty()`, no Swagger CLI
 plugin) — which the [real-world validation pass](../real-world-validation-report.md) found is
-common, not a corner case — `@mcp-gen/server` is designed to build the
+common, not a corner case — `@onkarsabale15/mcp-gen-server` is designed to build the
 `enrichEmptySchemas` class registry automatically from route handler parameter metadata that Nest
 already has, so you don't hand-maintain a schema-name → class map yourself:
 
@@ -105,7 +105,7 @@ or reads an env var for stdio — both explicitly documented as local-developmen
 not production auth strategies. Implement your own:
 
 ```typescript
-import type { AuthContextProvider, McpRequestExtra, AuthContext } from '@mcp-gen/server';
+import type { AuthContextProvider, McpRequestExtra, AuthContext } from '@onkarsabale15/mcp-gen-server';
 
 class MyAuthProvider implements AuthContextProvider {
   async resolve(extra: McpRequestExtra): Promise<AuthContext> {

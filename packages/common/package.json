@@ -1,5 +1,5 @@
 {
-  "name": "@mcp-gen/common",
+  "name": "@onkarsabale15/mcp-gen-common",
   "version": "0.0.1",
   "description": "Shared types and error classes for mcp-generator packages. No framework dependency.",
   "license": "MIT",

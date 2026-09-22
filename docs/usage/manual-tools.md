@@ -1,6 +1,6 @@
 # Manual, non-HTTP tools (`@McpTool` / `@McpArg`)
 
-> **Status: planned, not implemented yet.** Part of `@mcp-gen/server`, targeted for Phase 3 of the
+> **Status: planned, not implemented yet.** Part of `@onkarsabale15/mcp-gen-server`, targeted for Phase 3 of the
 > roadmap. Describes the designed API from `docs/mcp-generator-hld-lld.md` §3.7. See
 > [`README.md`](./README.md) for what's actually usable today.
 
@@ -14,7 +14,7 @@ service directly:
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { McpTool, McpArg } from '@mcp-gen/server';
+import { McpTool, McpArg } from '@onkarsabale15/mcp-gen-server';
 
 @Injectable()
 export class UserService {
@@ -51,7 +51,7 @@ uses for controller-backed tools.
   map back to positional call arguments.
 
 Both this dispatch path and the controller-backed one implement the same underlying `ToolExecutor`
-contract from `@mcp-gen/common` — so validation, truncation, and error-mapping are shared code
+contract from `@onkarsabale15/mcp-gen-common` — so validation, truncation, and error-mapping are shared code
 regardless of which path a given tool came from.
 
 ## When to use this instead of an HTTP route

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { SchemaResolutionError } from '@mcp-gen/common';
+import { SchemaResolutionError } from '@onkarsabale15/mcp-gen-common';
 import { planParameterMapping } from '../src/openapi/parameter-flattener.js';
 import type { OpenApiOperation } from '../src/openapi/types.js';
 

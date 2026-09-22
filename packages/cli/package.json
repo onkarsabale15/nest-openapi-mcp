@@ -1,6 +1,7 @@
 {
-  "name": "@mcp-gen/cli",
+  "name": "@onkarsabale15/mcp-gen-cli",
   "version": "0.0.1",
+  "private": true,
   "description": "Standalone CLI: turns any OpenAPI 3.0/3.1 document into a proxying MCP server. Placeholder \u2014 Phase 4 of the roadmap (see docs/mcp-generator-hld-lld.md).",
   "license": "MIT",
   "repository": {
@@ -20,9 +21,6 @@
     "cli",
     "llm-tools"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -47,8 +45,8 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@mcp-gen/common": "workspace:*",
-    "@mcp-gen/core": "workspace:*"
+    "@onkarsabale15/mcp-gen-common": "workspace:*",
+    "@onkarsabale15/mcp-gen-core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^26.6.2",

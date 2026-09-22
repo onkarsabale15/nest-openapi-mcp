@@ -1,6 +1,6 @@
-# Real-World Validation Report — `@mcp-gen/core`
+# Real-World Validation Report — `@onkarsabale15/mcp-gen-core`
 
-**Date:** 2026-09-22 · **Scope:** Ran the built `@mcp-gen/core` package (ref resolution, parameter flattening, tool naming, truncation) against OpenAPI documents from three real, NestJS-backed projects — not synthetic test fixtures.
+**Date:** 2026-09-22 · **Scope:** Ran the built `@onkarsabale15/mcp-gen-core` package (ref resolution, parameter flattening, tool naming, truncation) against OpenAPI documents from three real, NestJS-backed projects — not synthetic test fixtures.
 
 ## What was tested and how each spec was obtained
 
@@ -24,15 +24,15 @@
 
 **1. Empty body schemas when a NestJS app uses `class-validator` without `@ApiProperty()` or the Swagger CLI plugin — a common, not edge-case, pattern.**
 
-The `nestjs-sample-11-swagger` run reproduced this directly: `CreateCatDto` is decorated only with `class-validator`'s `@IsString()`/`@IsInt()` — no `@ApiProperty()`, and the sample doesn't use `@nestjs/swagger`'s CLI plugin (which can auto-generate `@ApiProperty()` from TS types at build time). The result: `SwaggerModule.createDocument()` itself emits `"CreateCatDto": { "type": "object", "properties": {} }` — completely empty. `@mcp-gen/core` faithfully carries that through: the generated tool's `body` schema has zero properties, so an LLM caller gets no guidance at all about what fields `create_cat` actually needs.
+The `nestjs-sample-11-swagger` run reproduced this directly: `CreateCatDto` is decorated only with `class-validator`'s `@IsString()`/`@IsInt()` — no `@ApiProperty()`, and the sample doesn't use `@nestjs/swagger`'s CLI plugin (which can auto-generate `@ApiProperty()` from TS types at build time). The result: `SwaggerModule.createDocument()` itself emits `"CreateCatDto": { "type": "object", "properties": {} }` — completely empty. `@onkarsabale15/mcp-gen-core` faithfully carries that through: the generated tool's `body` schema has zero properties, so an LLM caller gets no guidance at all about what fields `create_cat` actually needs.
 
-This isn't a bug in `@mcp-gen/core` — it's correctly reflecting what `@nestjs/swagger` gave it. But it's a real crack in the "zero-annotation, works against your existing app" pitch (design doc §0), because plenty of real NestJS codebases use `class-validator` alone for request validation and never bother with `@ApiProperty()`. **This needs a decision before Phase 2 goes further:**
+This isn't a bug in `@onkarsabale15/mcp-gen-core` — it's correctly reflecting what `@nestjs/swagger` gave it. But it's a real crack in the "zero-annotation, works against your existing app" pitch (design doc §0), because plenty of real NestJS codebases use `class-validator` alone for request validation and never bother with `@ApiProperty()`. **This needs a decision before Phase 2 goes further:**
 - (a) document it as a hard prerequisite (app must have `@ApiProperty()` or the CLI plugin enabled) and have `McpModule` emit a loud bootstrap warning listing every tool with an empty/near-empty body schema, or
 - (b) have the discovery service optionally read `class-validator`'s own metadata storage (`getMetadataStorage()`) as a fallback source of property names/types when the Swagger-derived schema is empty — more work, but closer to the "zero-annotation" promise actually holding up against a random real app.
 
 **2. Composed (`oneOf`) request bodies pass through opaquely — safe, but unexercised until now.**
 
-Cal.com's `POST /v2/bookings`, `/reschedule`, `/cancel`, and `/v2/auth/oauth2/token` all use `oneOf`-composed request body schemas (different shapes depending on the event type). `@mcp-gen/core` doesn't crash on these — the `nested` strategy just embeds the raw schema (including `oneOf`) under `body` as-is, which is valid JSON Schema and type-checks fine against `JsonSchemaProperty`'s index signature. No fix needed, but worth documenting explicitly: nothing in `@mcp-gen/core` validates or simplifies `oneOf`/`anyOf`/`allOf` — an LLM caller sees the raw union and has to reason about it itself.
+Cal.com's `POST /v2/bookings`, `/reschedule`, `/cancel`, and `/v2/auth/oauth2/token` all use `oneOf`-composed request body schemas (different shapes depending on the event type). `@onkarsabale15/mcp-gen-core` doesn't crash on these — the `nested` strategy just embeds the raw schema (including `oneOf`) under `body` as-is, which is valid JSON Schema and type-checks fine against `JsonSchemaProperty`'s index signature. No fix needed, but worth documenting explicitly: nothing in `@onkarsabale15/mcp-gen-core` validates or simplifies `oneOf`/`anyOf`/`allOf` — an LLM caller sees the raw union and has to reason about it itself.
 
 No `array`-typed top-level request bodies (e.g. a bulk-create endpoint accepting `[{...}, {...}]`) appeared in any of the three real specs, so that theoretical gap in the `flat` strategy (`bodySchema.properties` is `undefined` on an array schema, silently merging nothing) remains unexercised by real data — still worth a defensive fix and a unit test before Phase 2, since it's a real, if rarer, REST pattern.
 

@@ -1,4 +1,4 @@
-import { ToolRegistrationConflictError, type McpToolDefinition, type ToolExecutor } from '@mcp-gen/common';
+import { ToolRegistrationConflictError, type McpToolDefinition, type ToolExecutor } from '@onkarsabale15/mcp-gen-common';
 
 interface RegisteredTool {
   definition: McpToolDefinition;

@@ -1,7 +1,7 @@
 # Real-world OpenAPI fixtures
 
 These are unmodified OpenAPI documents pulled from real, independently-built NestJS projects,
-used to regression-test `@mcp-gen/core` against data it wasn't written to expect — see
+used to regression-test `@onkarsabale15/mcp-gen-core` against data it wasn't written to expect — see
 `real-world-validation-report.md` in the project docs for the original findings from this corpus.
 
 | File | Source | License note |

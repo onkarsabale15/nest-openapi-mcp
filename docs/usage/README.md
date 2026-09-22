@@ -7,10 +7,10 @@ reviewable, not because they're usable yet. Don't take a "planned" guide as some
 
 | Mode | Package | Status | Roadmap phase |
 |---|---|---|---|
-| [Use the schema engine directly](./core-library.md) | `@mcp-gen/core` | **Available now** — real, tested, validated against three independently-built NestJS OpenAPI documents | Phase 1 (done) |
-| [In-process NestJS module](./in-process-module.md) | `@mcp-gen/server` | Placeholder only | Phase 2–3 |
-| [Manual, non-HTTP tools](./manual-tools.md) | `@mcp-gen/server` | Placeholder only | Phase 3 |
-| [Standalone CLI / proxy](./cli-proxy.md) | `@mcp-gen/cli` | Placeholder only | Phase 4 |
+| [Use the schema engine directly](./core-library.md) | `@onkarsabale15/mcp-gen-core` | **Available now** — real, tested, validated against three independently-built NestJS OpenAPI documents | Phase 1 (done) |
+| [In-process NestJS module](./in-process-module.md) | `@onkarsabale15/mcp-gen-server` | Placeholder only | Phase 2–3 |
+| [Manual, non-HTTP tools](./manual-tools.md) | `@onkarsabale15/mcp-gen-server` | Placeholder only | Phase 3 |
+| [Standalone CLI / proxy](./cli-proxy.md) | `@onkarsabale15/mcp-gen-cli` | Placeholder only | Phase 4 |
 
 ## Which one do you actually want?
 

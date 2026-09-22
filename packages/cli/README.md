@@ -1,4 +1,4 @@
-# @mcp-gen/cli
+# @onkarsabale15/mcp-gen-cli
 
 Standalone CLI that turns any OpenAPI 3.0/3.1 document (not necessarily from NestJS) into a
 proxying [MCP](https://modelcontextprotocol.io) server — a separate process that makes real
@@ -7,7 +7,7 @@ dependency to the API's own process.
 
 **Status: placeholder — not implemented yet.** This is Phase 4 of
 [nest-openapi-mcp](https://github.com/onkarsabale15/nest-openapi-mcp)'s roadmap. The part of this
-project that's real today is [`@mcp-gen/core`](https://www.npmjs.com/package/@mcp-gen/core), the
+project that's real today is [`@onkarsabale15/mcp-gen-core`](https://www.npmjs.com/package/@onkarsabale15/mcp-gen-core), the
 underlying OpenAPI → MCP schema engine this CLI will run once built — that package's README has
 working code you can use now.
 

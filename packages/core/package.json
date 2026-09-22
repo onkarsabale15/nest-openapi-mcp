@@ -1,5 +1,5 @@
 {
-  "name": "@mcp-gen/core",
+  "name": "@onkarsabale15/mcp-gen-core",
   "version": "0.0.1",
   "description": "Framework-agnostic OpenAPI to MCP tool schema engine: ref resolution, parameter flattening, tool naming, the tool registry, and response truncation.",
   "license": "MIT",
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^11.0.0",
-    "@mcp-gen/common": "workspace:*",
+    "@onkarsabale15/mcp-gen-common": "workspace:*",
     "class-validator": "^0.15.1",
     "reflect-metadata": "^0.2.2"
   },

@@ -1,6 +1,6 @@
 /**
  * Shared types for mcp-generator. This file has zero dependency on NestJS or any HTTP framework —
- * see design doc ADR #4: @mcp-gen/core (and by extension @mcp-gen/common) must stay framework-agnostic
+ * see design doc ADR #4: @onkarsabale15/mcp-gen-core (and by extension @onkarsabale15/mcp-gen-common) must stay framework-agnostic
  * so the in-process (server) and proxy (cli) execution modes share one definition of "what a tool is."
  */
 
@@ -34,7 +34,7 @@ export interface JsonSchemaProperty {
   [extra: string]: unknown;
 }
 
-/** MCP tool metadata, as produced by @mcp-gen/core and registered with the SDK's Server. */
+/** MCP tool metadata, as produced by @onkarsabale15/mcp-gen-core and registered with the SDK's Server. */
 export interface McpToolDefinition {
   /** Must match ^[a-zA-Z0-9_-]{1,64}$ — enforced by buildToolName(), never trust an external value here. */
   name: string;
@@ -75,8 +75,8 @@ export interface McpRequestExtra {
 }
 
 /**
- * A tool executor is the one shape both the in-process dispatcher (@mcp-gen/server) and the proxy
- * dispatcher (@mcp-gen/cli) implement. Everything downstream of "get a raw result" — validation,
+ * A tool executor is the one shape both the in-process dispatcher (@onkarsabale15/mcp-gen-server) and the proxy
+ * dispatcher (@onkarsabale15/mcp-gen-cli) implement. Everything downstream of "get a raw result" — validation,
  * truncation, error-mapping — is shared code that only depends on this contract.
  */
 export type ToolExecutor = (

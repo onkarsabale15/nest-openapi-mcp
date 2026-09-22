@@ -1,4 +1,4 @@
-import { SchemaResolutionError, type JsonSchemaProperty } from '@mcp-gen/common';
+import { SchemaResolutionError, type JsonSchemaProperty } from '@onkarsabale15/mcp-gen-common';
 import type { OpenApiOperation } from './types.js';
 
 export type ParamStrategy = 'nested' | 'flat';

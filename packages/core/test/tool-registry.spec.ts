@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { ToolRegistrationConflictError, type McpToolDefinition } from '@mcp-gen/common';
+import { ToolRegistrationConflictError, type McpToolDefinition } from '@onkarsabale15/mcp-gen-common';
 import { ToolRegistry } from '../src/registry/tool-registry.js';
 
 function def(name: string): McpToolDefinition {

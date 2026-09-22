@@ -1,7 +1,7 @@
 /**
  * Minimal JSON-RPC 2.0 vocabulary shared across packages. We do not reimplement the protocol —
  * `@modelcontextprotocol/sdk` owns that — this only covers the pieces our own error-mapping code
- * (see @mcp-gen/server dispatch layer) needs to reason about explicitly.
+ * (see @onkarsabale15/mcp-gen-server dispatch layer) needs to reason about explicitly.
  *
  * Reserved/standard JSON-RPC error codes we map onto — see design doc §3.9 for the full table of
  * which situations map to a protocol-level error here versus a `CallToolResult.isError` tool error.

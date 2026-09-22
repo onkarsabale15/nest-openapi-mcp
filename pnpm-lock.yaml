@@ -35,10 +35,10 @@ importers:
 
   packages/cli:
     dependencies:
-      '@mcp-gen/common':
+      '@onkarsabale15/mcp-gen-common':
         specifier: workspace:*
         version: link:../common
-      '@mcp-gen/core':
+      '@onkarsabale15/mcp-gen-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -75,7 +75,7 @@ importers:
       '@apidevtools/json-schema-ref-parser':
         specifier: ^11.0.0
         version: 11.9.3
-      '@mcp-gen/common':
+      '@onkarsabale15/mcp-gen-common':
         specifier: workspace:*
         version: link:../common
       class-validator:
@@ -100,10 +100,10 @@ importers:
 
   packages/server:
     dependencies:
-      '@mcp-gen/common':
+      '@onkarsabale15/mcp-gen-common':
         specifier: workspace:*
         version: link:../common
-      '@mcp-gen/core':
+      '@onkarsabale15/mcp-gen-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
