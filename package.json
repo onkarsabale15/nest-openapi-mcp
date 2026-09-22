@@ -4,6 +4,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "description": "NestJS + OpenAPI to Model Context Protocol (MCP) server generator — monorepo root",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onkarsabale15/nest-openapi-mcp.git"
+  },
+  "homepage": "https://github.com/onkarsabale15/nest-openapi-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/onkarsabale15/nest-openapi-mcp/issues"
+  },
+  "author": "Onkar Sabale",
   "engines": {
     "node": ">=18"
   },

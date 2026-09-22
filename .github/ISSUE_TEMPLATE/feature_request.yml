@@ -1,0 +1,43 @@
+name: Feature request
+description: Propose something new, or a change to the design.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Worth a skim first: `docs/mcp-generator-hld-lld.md` (the HLD/LLD) already documents a lot of
+        deliberate decisions and trade-offs, including a phased roadmap and an explicit "Assumptions &
+        Open Questions" section (§9). Your idea might already be planned, or might be a case where the
+        reasoning behind an existing decision is worth challenging — either way, referencing the
+        relevant section helps.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: What are you trying to do that isn't currently possible, or is harder than it should be?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you want to see instead? API sketch, config shape, etc. are welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other ways to solve this, and why this approach is better.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Anything else
+    validations:
+      required: false

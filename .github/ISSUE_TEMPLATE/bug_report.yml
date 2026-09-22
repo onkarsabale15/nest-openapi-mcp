@@ -1,0 +1,81 @@
+name: Bug report
+description: Something doesn't work the way the docs/design say it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found a **security** issue instead? Please use [private reporting](https://github.com/onkarsabale15/nest-openapi-mcp/security/advisories/new) rather than this form — see SECURITY.md.
+
+  - type: input
+    id: package
+    attributes:
+      label: Affected package
+      description: e.g. @mcp-gen/core, @mcp-gen/server, @mcp-gen/cli
+      placeholder: "@mcp-gen/core"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "0.0.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: nest-version
+    attributes:
+      label: NestJS version (if applicable)
+      options:
+        - "12.x"
+        - "11.x"
+        - "Other / not applicable"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: http-adapter
+    attributes:
+      label: HTTP adapter (if applicable)
+      options:
+        - Express
+        - Fastify
+        - Not applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: A clear description of the bug. Include the actual error message/stack trace if there is one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: >
+        Ideally a minimal OpenAPI operation, DTO, or NestJS controller that triggers the bug — the
+        real-world validation report shows how much a single unusual spec/DTO shape can surface. A
+        link to a repo/gist reproducing it is even better than pasted code.
+      render: typescript
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Anything else
+    validations:
+      required: false

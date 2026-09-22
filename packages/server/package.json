@@ -1,8 +1,30 @@
 {
   "name": "@mcp-gen/server",
   "version": "0.0.1",
-  "description": "NestJS dynamic module: turns an existing NestJS + @nestjs/swagger app into an MCP server. Placeholder — Phase 2 of the roadmap (see docs/mcp-generator-hld-lld.md).",
+  "description": "NestJS dynamic module: turns an existing NestJS + @nestjs/swagger app into an MCP server. Placeholder \u2014 Phase 2 of the roadmap (see docs/mcp-generator-hld-lld.md).",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onkarsabale15/nest-openapi-mcp.git",
+    "directory": "packages/server"
+  },
+  "homepage": "https://github.com/onkarsabale15/nest-openapi-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/onkarsabale15/nest-openapi-mcp/issues"
+  },
+  "author": "Onkar Sabale",
+  "keywords": [
+    "nestjs",
+    "mcp",
+    "model-context-protocol",
+    "openapi",
+    "swagger",
+    "llm-tools",
+    "ai-agents"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

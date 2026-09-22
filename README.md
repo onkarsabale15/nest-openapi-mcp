@@ -1,12 +1,22 @@
-# mcp-generator
+# nest-openapi-mcp
 
 Turn an existing NestJS API (already documented with `@nestjs/swagger`) into a spec-compliant
 [Model Context Protocol](https://modelcontextprotocol.io) server — with zero per-endpoint annotation,
 and execution that goes through the real Nest pipeline (Guards, Pipes, Interceptors, `Scope.REQUEST`
 providers), not a reimplementation of it.
 
-> **Status:** early scaffold, under active development. See `docs/mcp-generator-hld-lld.md` for the
-> full architecture (also kept in sync with the project's design doc).
+Several NestJS↔MCP integrations already exist (notably
+[`rekog-labs/MCP-Nest`](https://github.com/rekog-labs/MCP-Nest)), but they're decorator-based — you
+annotate each method you want exposed by hand. This project's angle is Swagger-driven auto-discovery:
+if your API already has `@nestjs/swagger` metadata (or even just `class-validator` decorators — see
+`enrichEmptySchemas` in `@mcp-gen/core`), tool schemas are derived from it directly, with a safe-by-
+default policy so nothing is LLM-callable until you explicitly opt it in.
+
+> **Status:** `@mcp-gen/core` (the OpenAPI → MCP schema engine) is built, tested, and validated against
+> three independently-built NestJS codebases (see `docs/real-world-validation-report.md`).
+> `@mcp-gen/server` (the actual NestJS module you'd install) and `@mcp-gen/cli` are still placeholders —
+> this isn't installable as a working MCP server yet. See `docs/mcp-generator-hld-lld.md` for the full
+> architecture and phased roadmap.
 
 ## Packages
 
@@ -28,7 +38,8 @@ pnpm test
 ```
 
 This repo uses pnpm workspaces + Turborepo, Changesets for versioning/publishing, and strict
-TypeScript throughout. See `CONTRIBUTING.md` (coming in the docs pass) for conventions.
+TypeScript throughout. See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for conventions, and
+[`SECURITY.md`](./SECURITY.md) for the threat model and how to report a vulnerability privately.
 
 ## Naming note
 
