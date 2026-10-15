@@ -37,7 +37,7 @@ jobs:
       # Publishes to npm (with provenance) once that PR is merged and a changeset
       # is present on main. See CONTRIBUTING.md for the day-to-day changeset workflow.
       - name: Create Release Pull Request or Publish
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           publish: pnpm release
           version: pnpm version-packages
