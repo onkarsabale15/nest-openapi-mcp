@@ -46,7 +46,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^11.0.0",
+    "@apidevtools/json-schema-ref-parser": "^16.0.5",
     "@onkarsabale15/mcp-gen-common": "workspace:*",
     "class-validator": "^0.15.1",
     "reflect-metadata": "^0.2.2"
